@@ -1,3 +1,5 @@
+//feeds/page.jsx
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -56,11 +58,12 @@ function Feeds() {
     },
   });
 
-  const hasHydrated = useAuthStore((state) => state.hasHydrated);
+  const hasHydrated = useAuthStore((state) =>
+    typeof state.hasHydrated === "boolean" ? state.hasHydrated : false
+  );
 
   useEffect(() => {
-    if (!hasHydrated) return; // Wait for Zustand to hydrate
-    if (!isAuthenticated) {
+    if (hasHydrated && !isAuthenticated) {
       router.push("/emailandpass");
     }
   }, [isAuthenticated, hasHydrated, router]);

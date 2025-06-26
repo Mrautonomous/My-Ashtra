@@ -29,7 +29,7 @@ function EmailPass() {
       login({ user: { ...user, role, businessId }, accessToken, refreshToken });
       toast.success("Successfully Logged In");
       // Redirect to dashboard (or wherever you want)
-      router.push("/"); // or router.push("/")
+      router.push("/");
     } catch (err) {
       toast.error(err.message || "Login failed");
     }
