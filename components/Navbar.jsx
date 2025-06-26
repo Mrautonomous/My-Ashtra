@@ -16,7 +16,7 @@ function Navbar() {
     const userString = localStorage.getItem("user");
     if (userString) {
       const user = JSON.parse(userString);
-      setFirstName(user.firstName);
+      setFirstName(user?.firstName);
     }
   }, []);
 

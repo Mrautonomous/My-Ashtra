@@ -57,7 +57,7 @@ const PostModal = ({ open, onClose, onSubmit, initialData = null }) => {
         <div className="flex items-center gap-3">
           <Image src="/Avatar.svg" width={40} height={40} alt="user-dp" />
           <DialogHeader>
-            <DialogTitle>{user.firstName}</DialogTitle>
+            <DialogTitle>{user?.firstName}</DialogTitle>
           </DialogHeader>
         </div>
         <textarea

@@ -174,7 +174,7 @@ function Feeds() {
                     </div>
                     <div>
                       <h1 className="font-medium mb-[3px]">
-                        {user?.firstName}
+                        {user && user?.firstName}
                       </h1>
                       <div className="flex justify-center items-center gap-2">
                         <h3 className="text-xs text-[#565B62]">
