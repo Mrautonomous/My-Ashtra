@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useLoginMutation } from "../../../hooks/useRegisterUser"; // <-- make sure this exists
 import useAuthStore from "../../../../store/authStore"; // <-- import your store
+import toast from "react-hot-toast";
 
 function EmailPass() {
   const router = useRouter();
@@ -26,12 +27,11 @@ function EmailPass() {
 
       // Use Zustand store for auth state
       login({ user: { ...user, role, businessId }, accessToken, refreshToken });
-
+      toast.success("Successfully Logged In");
       // Redirect to dashboard (or wherever you want)
       router.push("/"); // or router.push("/")
     } catch (err) {
-      console.error("Login failed:", err.message);
-      alert("Login failed. Please check your credentials.");
+      toast.error(err.message || "Login failed");
     }
   };
 

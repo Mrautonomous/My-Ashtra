@@ -10,6 +10,7 @@ export const createPost = async (formData) => {
   const res = await api.post("/feed/posts", formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
+
   return res.data;
 };
 
