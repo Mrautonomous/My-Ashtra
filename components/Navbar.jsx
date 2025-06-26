@@ -68,7 +68,7 @@ function Navbar() {
       </div>
       <div className="flex items-center gap-[12px] sm:gap-[12px] flex-shrink-0">
         <Image src="/message.svg" width={20} height={20} alt="" />
-        <Image src="/notifications.svg" width={20} height={20} alt="" />
+        <Image src="/Notifications.svg" width={20} height={20} alt="" />
 
         <div className="w-[106px] h-[54px] border border-t-0 border-b-0 border-l-[#C9CED6] border-r-[#C9CED6] flex justify-center  items-center whitespace-nowrap">
           Saloon
