@@ -173,7 +173,9 @@ function Feeds() {
                       />
                     </div>
                     <div>
-                      <h1 className="font-medium mb-[3px]">{user.firstName}</h1>
+                      <h1 className="font-medium mb-[3px]">
+                        {user?.firstName}
+                      </h1>
                       <div className="flex justify-center items-center gap-2">
                         <h3 className="text-xs text-[#565B62]">
                           {new Date(post.createdAt).toLocaleString()}

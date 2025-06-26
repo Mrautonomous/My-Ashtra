@@ -16,7 +16,7 @@ const Hero = () => {
     if (!isAuthenticated) {
       router.push("/emailandpass");
     }
-  }, [isAuthenticated, hasHydrated, router]);
+  }, [isAuthenticated, router]);
 
   return (
     <>
