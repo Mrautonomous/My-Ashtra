@@ -58,15 +58,11 @@ function Feeds() {
     },
   });
 
-  const hasHydrated = useAuthStore((state) =>
-    typeof state.hasHydrated === "boolean" ? state.hasHydrated : false
-  );
-
   useEffect(() => {
-    if (hasHydrated && !isAuthenticated) {
+    if (!isAuthenticated) {
       router.push("/emailandpass");
     }
-  }, [isAuthenticated, hasHydrated, router]);
+  }, [isAuthenticated, router]);
 
   const handleCreatePost = (formData) => {
     createPost.mutate(formData);
@@ -90,7 +86,7 @@ function Feeds() {
     setOpenDropdown(openDropdown === postId ? null : postId);
   };
 
-  if (!hasHydrated || isLoading) {
+  if (isLoading) {
     return (
       <>
         <div className="flex flex-col justify-center items-center gap-8">

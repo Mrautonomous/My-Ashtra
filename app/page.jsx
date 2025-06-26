@@ -11,22 +11,12 @@ import DashboardSkeleton from "../components/HomeSkeleton";
 const Hero = () => {
   const router = useRouter();
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  const hasHydrated = useAuthStore((state) => state.hasHydrated);
 
   useEffect(() => {
-    if (hasHydrated && !isAuthenticated) {
+    if (!isAuthenticated) {
       router.push("/emailandpass");
     }
   }, [isAuthenticated, hasHydrated, router]);
-
-  if (!hasHydrated) {
-    // Optionally show a loading skeleton
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <DashboardSkeleton />
-      </div>
-    );
-  }
 
   return (
     <>
